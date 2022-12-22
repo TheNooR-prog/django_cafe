@@ -30,4 +30,8 @@ class Dish(models.Model):
     ingredients = models.CharField(max_length=100)
     photo = models.ImageField(upload_to=get_file_name)
 
+    class Meta:
+        ordering = ("position", )
 
+    def __str__(self):
+        return f"{self.name}"
